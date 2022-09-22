@@ -4,25 +4,30 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
-<h2>test</h2>
-<table class="table table-striped">
+<h1>Donjon & Dragons</h1>
+<h2>Liste des Héros</h2>
+<table class="table table-striped" >
     <tr>
         <th>Id</th>
         <th>Name</th>
         <th>Hp</th>
         <th>Type</th>
     </tr>
-    <tr th:each="Hero : ${all}">
+    <tr th:each="Hero : ${heros}">
         <td th:text="${Hero.id}"></td>
-        <td th:text="${}"></td>
-        <td th:text="${}"></td>
-        <td th:text="${}"></td>
+        <td th:text="${Hero.name}"></td>
+        <td th:text="${Hero.hp}"></td>
+        <td th:text="${Hero.type}"></td>
 
     </tr>
 </table>
-<a th:href="@{/test}"> </a>
+<button class="btn btn-primary"><a th:href="@{/create}">Ajouter</a></button>
+
+<input type="button" value="Supprimer">
 </body>
 </html>
